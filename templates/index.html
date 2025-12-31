@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+
+    <audio id="my_audio" src="{{ url_for('static', filename='8-bit-happy-bday.mp3') }}"></audio>
+
+    <script>
+        function startAudio() {
+            const audio = document.getElementById("my_audio");
+            audio.play();
+            document.removeEventListener("click", startAudio);
+            document.removeEventListener("touchstart", startAudio);
+        }
+
+        document.addEventListener("click", startAudio);
+        document.addEventListener("touchstart", startAudio);
+    </script>
+</head>
+<body>
+    <h1>Happy Birthday {{name}}!</h1>
+    <h3>{{text}}</h3>
+
+    <a class="gif-link" href="{{ url_for('static', filename='gift.zip') }}" download>
+        <img class="center" src="https://www.carlswebgraphics.com/birthday/animated-birthday-cake.gif" alt="Birthday Cake"/>
+    </a>
+    <p class="hint">Tap the cake to download your birthday gifts</p>
+</body>
+</html>
