@@ -18,7 +18,7 @@ A simple Flask-based birthday webpage that displays a personalized message, play
 2) Run app.py (python app.py)
 
 **Customization**
-Edit app.py to change the name and message:
+\n Edit app.py to change the name and message:
 - name = "Name Here"
 - text = "Birthday Message Here"
 Edit index.html to change...
